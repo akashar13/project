@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6" style="line-height: 50px;">
+
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleInputFirstName1">Name</label>
+                            <input type="text" formControlName="firstName" class="form-control" id="exampleInputFirstName1" aria-describedby="FirstNameHelp" placeholder="Enter FirstName">
+
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div *ngFor="let CountryData of CountryData; let i=index">
+                            <label>
+                              <input type="checkbox" [value]="CountryData.value" (change)="onCheckboxChange($event)" />
+                              {{CountryData.name}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+
+                            <div class="col-6">
+                                <label for="country">Country:</label>
+                            </div>
+                            <div class="col-6">
+                                <select [(ngModel)]="country" formControlName="country">
+                            <option *ngFor="let country of countries"  [value]="country"> {{ country }} </option>
+                          </select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="state">State:</label>
+                            </div>
+                            <div class="col-6">
+
+                                <select *ngIf="country" formControlName="state" [(ngModel)]="city" [value]="city">
+                                    <option *ngFor="let city of cities"> {{ city }} </option>
+                                  </select>
+                                <select *ngIf="!country">
+                                    <option disabled    >--select-- </option>
+                                  </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
