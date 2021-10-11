@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormcompComponent } from './formcomp/formcomp.component';
+import { DashComponent } from './dash/dash.component';
+
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
-    path: '', component: FormcompComponent
+    path: '', component: LoginComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'register', component: RegisterComponent
   }
-
+  ,
+  {
+    path: 'dash', component: DashComponent
+  }
 ];
 
 @NgModule({
