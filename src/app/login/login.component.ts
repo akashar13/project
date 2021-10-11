@@ -24,12 +24,11 @@ export class LoginComponent implements OnInit {
     // TODO: Use EventEmitter with form value
 this.profService.login().subscribe((res:any)=>{
   const user = res.find((a:any)=>{
-    return a.firstName === data.firstName && a.password === data.password 
+    return a.firstName == data.firstName && a.password == data.password 
   })
   if(user){
     this.router.navigateByUrl('/dash');
     this.profileForm.reset();
-
   }
   else{
     alert("no user found")
