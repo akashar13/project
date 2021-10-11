@@ -1,23 +1,14 @@
 {
-    "userdata": [{
-            "id": 1,
-            "username": "json-server",
-            "password": "typicode"
-        },
-        {
-            "firstName": "sd",
-            "password": "ds",
-            "id": 2
-        },
-        {
-            "firstName": "akash",
-            "password": "akash",
-            "id": 3
-        },
-        {
-            "firstName": "no",
-            "password": "no",
-            "id": 4
-        }
-    ]
+  "userdata": [
+    {
+      "id": 1,
+      "username": "akash",
+      "password": "akash"
+    },
+    {
+      "firstName": "check",
+      "password": "qwerty",
+      "id": 2
+    }
+  ]
 }
