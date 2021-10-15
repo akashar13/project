@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">
+            <form [formGroup]="profileForm">
                 <div class="form-group">
                     <label for="exampleInputUsername1">Username </label>
                     <span class="text-danger">*</span>
@@ -19,13 +19,48 @@
                     <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" [hidden]=update (click)="onSubmit(profileForm.value);this.profileForm.reset()">Submit</button>
+                <button type="submit" class="btn btn-primary " [hidden]=!update (click)=updateData(profileForm.value);this.profileForm.reset()>Update</button>
+
+
             </form>
         </div>
     </div>
     <div class="row">
         <div class="col-3">
             Already have an account? <button (click)=register()>clickhere</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">sl no</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">password</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of collection;index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{item.firstName}}</td>
+                        <td>{{item.password}}</td>
+                        <td><button (click)=edit(item,i)>edit</button></td>
+                        <td></td>
+                        <td><button (click)=delete(i)>delete</button></td>
+
+
+                        <td></td>
+
+
+
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

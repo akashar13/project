@@ -1,13 +1,5 @@
 {
-    "userdata": [{
-            "id": 1,
-            "firstName": "akash",
-            "password": "akash"
-        },
-        {
-            "firstName": "check",
-            "password": "qwerty",
-            "id": 2
-        }
+    "userdata": [
+
     ]
 }
